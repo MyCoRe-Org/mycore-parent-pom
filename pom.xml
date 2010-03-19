@@ -5,7 +5,7 @@
   <groupId>org.mycore</groupId>
   <artifactId>mycore</artifactId>
   <packaging>pom</packaging>
-  <version>2</version>
+  <version>3</version>
   <name>The MyCoRe Community</name>
   <description>MyCoRe is a system for the development of document and publication servers, applications, archives, collections of images or
     similar repositories. On MyCoRe-based applications use a common core, which are typically required for such applications functionality
@@ -176,8 +176,18 @@
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>1.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
           <artifactId>buildnumber-maven-plugin</artifactId>
           <version>1.0-beta-4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>xml-maven-plugin</artifactId>
+          <version>1.0-beta-3</version>
         </plugin>
       </plugins>
     </pluginManagement>
