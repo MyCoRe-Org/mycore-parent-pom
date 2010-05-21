@@ -60,9 +60,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://server.mycore.de/svn/maven/mycore/trunk</connection>
-    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/mycore/trunk</developerConnection>
-    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/mycore/</url>
+    <connection>scm:svn:http://server.mycore.de/svn/maven/org.mycore/trunk</connection>
+    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/org.mycore/trunk</developerConnection>
+    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/org.mycore/</url>
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
