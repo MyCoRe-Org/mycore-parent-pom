@@ -65,6 +65,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <site.directory>latest</site.directory>
   </properties>
   <distributionManagement>
     <repository>
@@ -81,7 +82,7 @@
     <site>
       <id>MyCoRe HQ</id>
       <name>MyCoRe HQ-sites</name>
-      <url>scp://server.mycore.de/mcr/mycore.de/generated</url>
+      <url>scp://server.mycore.de/mcr/mycore.de/generated/${project.artifactId}-${project.version}</url>
     </site>
   </distributionManagement>
   <build>
