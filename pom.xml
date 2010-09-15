@@ -97,13 +97,6 @@
             </goals>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.mycore.skins</groupId>
-            <artifactId>mycore-site-skin</artifactId>
-            <version>1.0</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
     <pluginManagement>
