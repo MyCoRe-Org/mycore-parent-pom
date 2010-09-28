@@ -11,6 +11,9 @@
     		<item name="2.0.91" href="http://www.mycore.de/generated/2.0.91/"/>
     		<item name="2.0.92-SNAPHSOT" href="http://www.mycore.de/generated/mycore-2.0.92-SNAPSHOT"/>
     	</item>
+    	<item name="Image-Tiler">
+    		<item name="1.4-SNAPHSOT" href="http://www.mycore.de/generated/image-tiler-1.4-SNAPSHOT"/>
+    	</item>
     </menu>
     <menu ref="reports"/>
   </body>
