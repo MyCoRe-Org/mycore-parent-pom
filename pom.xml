@@ -237,6 +237,15 @@
         <version>2.2</version>
       </plugin>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>2.3.1</version>
+        <configuration>
+          <xmlOutput>true</xmlOutput>
+          <findbugsXmlOutput>true</findbugsXmlOutput>
+        </configuration>
+      </plugin>
+      <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.5</version>
       </plugin>
@@ -253,14 +262,6 @@
         <version>2.5</version>
         <configuration>
           <targetJdk>${java.target.version}</targetJdk>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <configuration>
-          <xmlOutput>true</xmlOutput>
-          <findbugsXmlOutput>true</findbugsXmlOutput>
         </configuration>
       </plugin>
     </plugins>
