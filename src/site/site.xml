@@ -9,10 +9,12 @@
     	<item name="MyCoRe">
     		<item name="2.0.90" href="http://www.mycore.de/generated/2.0.90/"/>
     		<item name="2.0.91" href="http://www.mycore.de/generated/2.0.91/"/>
-    		<item name="2.0.92-SNAPHSOT" href="http://www.mycore.de/generated/mycore-2.0.92-SNAPSHOT"/>
+    		<item name="2.0.92" href="http://www.mycore.de/generated/mycore-2.0.92"/>
+    		<item name="2.0.93-SNAPHSOT" href="http://www.mycore.de/generated/mycore-2.0.93-SNAPSHOT"/>
     	</item>
     	<item name="Image-Tiler">
-    		<item name="1.4-SNAPHSOT" href="http://www.mycore.de/generated/image-tiler-1.4-SNAPSHOT"/>
+    		<item name="1.4" href="http://www.mycore.de/generated/image-tiler-1.4"/>
+    		<item name="1.5-SNAPHSOT" href="http://www.mycore.de/generated/image-tiler-1.5-SNAPSHOT"/>
     	</item>
     </menu>
     <menu ref="reports"/>
