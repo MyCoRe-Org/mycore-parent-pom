@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.mycore</groupId>
   <artifactId>mycore-parent</artifactId>
   <packaging>pom</packaging>
-  <version>7-SNAPSHOT</version>
+  <version>7</version>
   <name>MyCoRe Parent POM</name>
   <description>The MyCoRe Parent POM holds mailing list, continous integration and plugin definitions used by all MyCoRe Maven projects.</description>
   <organization>
@@ -58,9 +57,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://server.mycore.de/svn/maven/org.mycore/trunk</connection>
-    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/org.mycore/trunk</developerConnection>
-    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/org.mycore/</url>
+    <connection>scm:svn:http://server.mycore.de/svn/maven/org.mycore/tags/mycore-parent-7</connection>
+    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/org.mycore/tags/mycore-parent-7</developerConnection>
+    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/org.mycore/tags/mycore-parent-7</url>
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
