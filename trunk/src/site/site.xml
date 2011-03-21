@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  <skin>
+    <groupId>org.mycore.skins</groupId>
+    <artifactId>mycore-site-skin</artifactId>
+  </skin>
+  <body>
+    <menu name="Maven Projects" inherit="bottom">
+    	<item name="MyCoRe">
+    		<item name="2.0.90" href="http://www.mycore.de/generated/2.0.90/"/>
+    		<item name="2.0.91" href="http://www.mycore.de/generated/2.0.91/"/>
+    		<item name="2.0.92" href="http://www.mycore.de/generated/mycore-2.0.92"/>
+    		<item name="2.0.93" href="http://www.mycore.de/generated/mycore-2.0.93"/>
+    		<item name="2.0.94-SNAPSHOT" href="http://www.mycore.de/generated/mycore-2.0.94-SNAPSHOT"/>
+    	</item>
+    	<item name="Image-Tiler">
+    		<item name="1.4" href="http://www.mycore.de/generated/image-tiler-1.4"/>
+    		<item name="1.5" href="http://www.mycore.de/generated/image-tiler-1.5"/>
+    		<item name="1.6-SNAPSHOT" href="http://www.mycore.de/generated/image-tiler-1.6-SNAPSHOT"/>
+    	</item>
+    	<item name="Maven Plugins">
+	    	<item name="Datamodel-Plugin" href="http://www.mycore.de/generated/datamodel-plugin/"/>
+    	</item>
+    </menu>
+    <menu ref="reports"/>
+  </body>
+</project>
