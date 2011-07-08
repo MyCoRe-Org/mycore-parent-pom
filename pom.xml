@@ -248,6 +248,8 @@
         						</versionRange>
         						<goals>
         							<goal>schema</goal>
+        							<goal>copy-editor</goal>
+        							<goal>swf-pages</goal>
         						</goals>
         					</pluginExecutionFilter>
         					<action>
