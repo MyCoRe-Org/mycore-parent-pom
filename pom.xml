@@ -105,6 +105,11 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>jaxws-maven-plugin</artifactId>
+          <version>1.12</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
           <version>1.6</version>
         </plugin>
