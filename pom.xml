@@ -4,7 +4,7 @@
   <groupId>org.mycore</groupId>
   <artifactId>mycore-parent</artifactId>
   <packaging>pom</packaging>
-  <version>11-SNAPSHOT</version>
+  <version>11</version>
   <name>MyCoRe Parent POM</name>
   <description>The MyCoRe Parent POM holds mailing list, continous integration and plugin definitions used by all MyCoRe Maven projects.</description>
   <organization>
@@ -57,9 +57,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://server.mycore.de/svn/maven/org.mycore/trunk</connection>
-    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/org.mycore/trunk</developerConnection>
-    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/org.mycore/</url>
+    <connection>scm:svn:http://server.mycore.de/svn/maven/org.mycore/tags/mycore-parent-11</connection>
+    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/org.mycore/tags/mycore-parent-11</developerConnection>
+    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/org.mycore/tags/mycore-parent-11</url>
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -258,7 +258,7 @@
         						</goals>
         					</pluginExecutionFilter>
         					<action>
-        						<ignore></ignore>
+        						<ignore />
         					</action>
         				</pluginExecution>
         				<pluginExecution>
@@ -273,7 +273,7 @@
         						</goals>
         					</pluginExecutionFilter>
         					<action>
-        						<ignore></ignore>
+        						<ignore />
         					</action>
         				</pluginExecution>
         				<pluginExecution>
@@ -289,7 +289,7 @@
         						</goals>
         					</pluginExecutionFilter>
         					<action>
-        						<ignore></ignore>
+        						<ignore />
         					</action>
         				</pluginExecution>
         				<pluginExecution>
@@ -304,7 +304,7 @@
         						</goals>
         					</pluginExecutionFilter>
         					<action>
-        						<ignore></ignore>
+        						<ignore />
         					</action>
         				</pluginExecution>
         				<pluginExecution>
@@ -321,7 +321,7 @@
         						</goals>
         					</pluginExecutionFilter>
         					<action>
-        						<ignore></ignore>
+        						<ignore />
         					</action>
         				</pluginExecution>
         				<pluginExecution>
@@ -336,7 +336,7 @@
         						</goals>
         					</pluginExecutionFilter>
         					<action>
-        						<ignore></ignore>
+        						<ignore />
         					</action>
         				</pluginExecution>
         			</pluginExecutions>
