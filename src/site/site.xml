@@ -6,8 +6,8 @@
   </skin>
   <body>
     <menu name="Maven Projects" inherit="bottom">
-    	<item name="MyCoRe">
-    		<item name="2.1">
+    	<item name="MyCoRe" href="#">
+    		<item name="2.1" href="#">
 	    		<item name="2.0.90" href="http://www.mycore.de/generated/2.0.90/"/>
 	    		<item name="2.0.91" href="http://www.mycore.de/generated/2.0.91/"/>
 	    		<item name="2.0.92" href="http://www.mycore.de/generated/mycore-2.0.92"/>
@@ -15,17 +15,17 @@
 	    		<item name="2.0.94" href="http://www.mycore.de/generated/mycore-2.0.94"/>
 	    		<item name="2.1.0" href="http://www.mycore.de/generated/mycore-2.1.0"/>
     		</item>
-    		<item name="2.2">
+    		<item name="2.2" href="#">
 	    		<item name="2.1.80-SNAPSHOT" href="http://www.mycore.de/generated/mycore-2.1.80-SNAPSHOT"/>
     		</item>
     	</item>
-    	<item name="Image-Tiler">
+    	<item name="Image-Tiler" href="#">
     		<item name="1.4" href="http://www.mycore.de/generated/image-tiler-1.4"/>
     		<item name="1.5" href="http://www.mycore.de/generated/image-tiler-1.5"/>
     		<item name="1.6" href="http://www.mycore.de/generated/image-tiler-1.6"/>
     		<item name="1.7-SNAPSHOT" href="http://www.mycore.de/generated/image-tiler-1.7-SNAPSHOT"/>
     	</item>
-    	<item name="Maven Plugins">
+    	<item name="Maven Plugins" href="#">
 	    	<item name="Datamodel-Plugin" href="http://www.mycore.de/generated/datamodel-plugin/"/>
     	</item>
     </menu>
