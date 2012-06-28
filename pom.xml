@@ -14,7 +14,7 @@
   <url>http://www.mycore.org/generated</url>
   <ciManagement>
     <system>jenkins</system>
-    <url>http://jenkins.mycore.org/</url>
+    <url>http://jenkins.mycore.de/</url>
     <notifiers>
       <notifier>
         <type>mail</type>
