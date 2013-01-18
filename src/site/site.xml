@@ -17,14 +17,16 @@
 	    		<item name="2.1.2-SNAPSHOT" href="http://www.mycore.de/generated/mycore-2.1.2-SNAPSHOT"/>
     		</item>
     		<item name="2.2" href="#">
-	    		<item name="2.1.80-SNAPSHOT" href="http://www.mycore.de/generated/mycore-2.1.80-SNAPSHOT"/>
+	    		<item name="2.1.80" href="http://www.mycore.de/generated/mycore-2.1.80"/>
+	    		<item name="2.1.81-SNAPSHOT" href="http://www.mycore.de/generated/mycore-2.1.81-SNAPSHOT"/>
     		</item>
     	</item>
     	<item name="Image-Tiler" href="#">
     		<item name="1.4" href="http://www.mycore.de/generated/image-tiler-1.4"/>
     		<item name="1.5" href="http://www.mycore.de/generated/image-tiler-1.5"/>
     		<item name="1.6" href="http://www.mycore.de/generated/image-tiler-1.6"/>
-    		<item name="1.7-SNAPSHOT" href="http://www.mycore.de/generated/image-tiler-1.7-SNAPSHOT"/>
+    		<item name="1.7" href="http://www.mycore.de/generated/image-tiler-1.7"/>
+    		<item name="1.8-SNAPSHOT" href="http://www.mycore.de/generated/image-tiler-1.7-SNAPSHOT"/>
     	</item>
     	<item name="Maven Plugins" href="#">
 	    	<item name="Datamodel-Plugin" href="http://www.mycore.de/generated/datamodel-plugin/"/>
