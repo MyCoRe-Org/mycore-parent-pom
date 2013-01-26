@@ -287,6 +287,7 @@
                     <versionRange>[2.2,)</versionRange>
                     <goals>
                       <goal>wsgen</goal>
+                      <goal>wsimport</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
