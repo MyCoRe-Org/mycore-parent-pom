@@ -67,6 +67,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <mycore.build.directory>target</mycore.build.directory>
     <site.directory>latest</site.directory>
   </properties>
   <distributionManagement>
@@ -88,6 +89,7 @@
     </site>
   </distributionManagement>
   <build>
+    <directory>${mycore.build.directory}</directory>
     <plugins>
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
