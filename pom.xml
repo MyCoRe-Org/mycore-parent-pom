@@ -102,7 +102,7 @@
               <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
             </manifest>
             <manifestEntries>
-              <POM>META-INF/maven/${groupId}/${artifactId}/pom.properties</POM>
+              <POM>META-INF/maven/${project.groupId}/${project.artifactId}/pom.properties</POM>
             </manifestEntries>
           </archive>
         </configuration>
