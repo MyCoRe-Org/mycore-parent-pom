@@ -27,6 +27,7 @@
     		<item name="1.6" href="http://www.mycore.de/generated/image-tiler-1.6"/>
     		<item name="1.7" href="http://www.mycore.de/generated/image-tiler-1.7"/>
     		<item name="1.8" href="http://www.mycore.de/generated/image-tiler-1.8"/>
+    		<item name="1.9" href="http://www.mycore.de/generated/image-tiler-1.9"/>
     	</item>
     	<item name="Maven Plugins" href="#">
 	    	<item name="Datamodel-Plugin" href="http://www.mycore.de/generated/datamodel-plugin/"/>
