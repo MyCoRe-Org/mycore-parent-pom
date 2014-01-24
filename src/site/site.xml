@@ -8,31 +8,31 @@
     <menu name="Maven Projects" inherit="bottom">
     	<item name="MyCoRe" href="#">
     		<item name="Long Term Support" href="#">
-	    		<item name="2013.06.0.2" href="/generated/mycore-2013.06.0.2" />
+	    		<item name="2013.06.0.2" href="/mycore-2013.06.0.2" />
     		</item>
     		<item name="Rolling Releases" href="#">
-	    		<item name="2013.05" href="/generated/mycore-2013.05" />
-	    		<item name="2013.08" href="/generated/mycore-2013.08" />
-	    		<item name="2013.11" href="/generated/mycore-2013.11" />
-	    		<item name="2014.01" href="/generated/mycore-2014.01" />
+	    		<item name="2013.05" href="/mycore-2013.05" />
+	    		<item name="2013.08" href="/mycore-2013.08" />
+	    		<item name="2013.11" href="/mycore-2013.11" />
+	    		<item name="2014.01" href="/mycore-2014.01" />
     		</item>
     		<item name="old releases" href="#">
-	    		<item name="2.1.0" href="/generated/mycore-2.1.0/" />
+	    		<item name="2.1.0" href="/mycore-2.1.0/" />
     		</item>
     	</item>
         <item name="Built with MyCoRe" href="#">
-    	  <item name="MyCoRe/MODS Institutional Repository" href="/generated/mir/" />
+    	  <item name="MyCoRe/MODS Institutional Repository" href="/mir/" />
         </item>
     	<item name="Image-Tiler" href="#">
-    		<item name="1.4" href="/generated/image-tiler-1.4/" />
-    		<item name="1.5" href="/generated/image-tiler-1.5/" />
-    		<item name="1.6" href="/generated/image-tiler-1.6/" />
-    		<item name="1.7" href="/generated/image-tiler-1.7/" />
-    		<item name="1.8" href="/generated/image-tiler-1.8/" />
-    		<item name="1.9" href="/generated/image-tiler-1.9/" />
+    		<item name="1.4" href="/image-tiler-1.4/" />
+    		<item name="1.5" href="/image-tiler-1.5/" />
+    		<item name="1.6" href="/image-tiler-1.6/" />
+    		<item name="1.7" href="/image-tiler-1.7/" />
+    		<item name="1.8" href="/image-tiler-1.8/" />
+    		<item name="1.9" href="/image-tiler-1.9/" />
     	</item>
     	<item name="Maven Plugins" href="#">
-	    	<item name="Datamodel-Plugin" href="/generated/datamodel-plugin/" />
+	    	<item name="Datamodel-Plugin" href="/datamodel-plugin/" />
     	</item>
     </menu>
     <menu ref="reports"/>
