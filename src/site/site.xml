@@ -6,7 +6,7 @@
   </skin>
   <body>
     <menu name="Maven Projects" inherit="bottom">
-    	<item name="MyCoRe" href="#">
+    	<item name="MyCoRe" href="/mycore/">
     		<item name="Long Term Support" href="#">
 	    		<item name="2013.06.0.2" href="/mycore-2013.06.0.2" />
     		</item>
@@ -15,6 +15,8 @@
 	    		<item name="2013.08" href="/mycore-2013.08" />
 	    		<item name="2013.11" href="/mycore-2013.11" />
 	    		<item name="2014.01" href="/mycore-2014.01" />
+	    		<item name="2014.02" href="/mycore-2014.02" />
+	    		<item name="2014.03" href="/mycore-2014.03" />
     		</item>
     		<item name="old releases" href="#">
 	    		<item name="2.1.0" href="/mycore-2.1.0/" />
