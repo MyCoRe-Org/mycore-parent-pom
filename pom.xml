@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.mycore</groupId>
   <artifactId>mycore-parent</artifactId>
@@ -277,7 +278,9 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <execute>
+                      <runOnIncremental>false</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -292,7 +295,9 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <execute>
+                      <runOnIncremental>false</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -306,7 +311,9 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <execute>
+                      <runOnIncremental>false</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -321,7 +328,9 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <execute>
+                      <runOnIncremental>false</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -338,7 +347,9 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <execute>
+                      <runOnIncremental>false</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -354,6 +365,22 @@
                   </pluginExecutionFilter>
                   <action>
                     <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <goals>
+                      <goal>create</goal>
+                    </goals>
+                    <versionRange>[0.0,)</versionRange>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute>
+                      <runOnConfiguration>true</runOnConfiguration>
+                      <runOnIncremental>true</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
