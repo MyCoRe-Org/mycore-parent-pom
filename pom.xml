@@ -32,8 +32,8 @@
     </notifiers>
   </ciManagement>
   <issueManagement>
-    <system>SourceForge</system>
-    <url>https://sourceforge.net/p/mycore/bugs/</url>
+    <system>JIRA</system>
+    <url>https://mycore.atlassian.net/</url>
   </issueManagement>
   <inceptionYear>2001</inceptionYear>
   <mailingLists>
