@@ -134,6 +134,8 @@
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>2.16</version>
+          <!-- disable our rules for the moment -->
+          <!-- 
           <dependencies>
             <dependency>
               <groupId>org.mycore</groupId>
@@ -141,6 +143,7 @@
               <version>1.4</version>
             </dependency>
           </dependencies>
+           -->
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
