@@ -507,6 +507,11 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
+                <!-- Disable DocLint http://openjdk.java.net/jeps/172 to bring javadoc
+                     back to work until errors are fixed -->
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
               </execution>
             </executions>
           </plugin>
