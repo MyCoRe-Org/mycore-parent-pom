@@ -69,6 +69,8 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <mycore.build.directory>target</mycore.build.directory>
     <site.directory>latest</site.directory>
+    <!-- Disable DocLint http://openjdk.java.net/jeps/172 to bring javadoc back to work until errors are fixed -->
+    <additionalparam>-Xdoclint:none</additionalparam>
   </properties>
   <distributionManagement>
     <repository>
@@ -507,11 +509,6 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
-                <!-- Disable DocLint http://openjdk.java.net/jeps/172 to bring javadoc
-                     back to work until errors are fixed -->
-                <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
               </execution>
             </executions>
           </plugin>
