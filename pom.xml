@@ -118,7 +118,7 @@
         <plugin>
           <groupId>org.jvnet.jax-ws-commons</groupId>
           <artifactId>jaxws-maven-plugin</artifactId>
-          <version>2.3</version>
+          <version>2.3.1-b03</version>
         </plugin>
         <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
@@ -311,7 +311,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.jvnet.jax-ws-commons</groupId>
                     <artifactId>jaxws-maven-plugin</artifactId>
-                    <versionRange>[2.2,)</versionRange>
+                    <versionRange>[2.3,)</versionRange>
                     <goals>
                       <goal>wsgen</goal>
                       <goal>wsimport</goal>
