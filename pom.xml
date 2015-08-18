@@ -70,6 +70,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <mycore.build.directory>target</mycore.build.directory>
     <site.directory>latest</site.directory>
+    <jaxws.plugin.version>2.3</jaxws.plugin.version>
   </properties>
   <distributionManagement>
     <repository>
@@ -118,7 +119,7 @@
         <plugin>
           <groupId>org.jvnet.jax-ws-commons</groupId>
           <artifactId>jaxws-maven-plugin</artifactId>
-          <version>2.3.1-b03</version>
+          <version>${jaxws.plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
