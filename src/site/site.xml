@@ -11,8 +11,8 @@
 	    		<item name="2015.05.0" href="/mycore-2015.05" />
     		</item>
     		<item name="Rolling Releases" href="#">
+	    		<item name="2015.11" href="/mycore-2015.11" />
 	    		<item name="2015.07" href="/mycore-2015.07" />
-	    		<item name="2015.02" href="/mycore-2015.02" />
     		</item>
     		<item name="old releases" href="#">
 	    		<item name="2014.06.0" href="/mycore-2014.06" />
