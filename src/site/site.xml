@@ -8,7 +8,7 @@
     <menu name="Maven Projects" inherit="bottom">
     	<item name="MyCoRe" href="/mycore/">
     		<item name="Long Term Support" href="#">
-	    		<item name="2015.05.0" href="/mycore-2015.05" />
+	    		<item name="2016.06.0" href="/mycore-2016.06.0.x" />
     		</item>
     		<item name="Rolling Releases" href="#">
 	    		<item name="2016.02" href="/mycore-2016.02" />
@@ -16,6 +16,7 @@
 	    		<item name="2015.07" href="/mycore-2015.07" />
     		</item>
     		<item name="old releases" href="#">
+	    		<item name="2015.05.0" href="/mycore-2015.05" />
 	    		<item name="2014.06.0" href="/mycore-2014.06" />
 	    		<item name="2013.06.0.2" href="/mycore-2013.06.0.2" />
 	    		<item name="2.1.0" href="/mycore-2.1.0/" />
