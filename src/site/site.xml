@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+<project xmlns="http://maven.apache.org/DECORATION/1.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0 http://maven.apache.org/xsd/decoration-1.7.0.xsd">
   <skin>
     <groupId>org.mycore.skins</groupId>
     <artifactId>mycore-site-skin</artifactId>
@@ -11,11 +11,12 @@
 	    		<item name="2016.06.0" href="/mycore-2016.06.0.x" />
     		</item>
     		<item name="Rolling Releases" href="#">
+	    		<item name="2016.12" href="/mycore-2016.12" />
+    		</item>
+    		<item name="old releases" href="#">
 	    		<item name="2016.02" href="/mycore-2016.02" />
 	    		<item name="2015.11" href="/mycore-2015.11" />
 	    		<item name="2015.07" href="/mycore-2015.07" />
-    		</item>
-    		<item name="old releases" href="#">
 	    		<item name="2015.05.0" href="/mycore-2015.05" />
 	    		<item name="2014.06.0" href="/mycore-2014.06" />
 	    		<item name="2013.06.0.2" href="/mycore-2013.06.0.2" />
@@ -26,12 +27,11 @@
     	  <item name="MyCoRe/MODS Institutional Repository" href="/mir/" />
         </item>
     	<item name="Image-Tiler" href="#">
-    		<item name="1.4" href="/image-tiler-1.4/" />
-    		<item name="1.5" href="/image-tiler-1.5/" />
-    		<item name="1.6" href="/image-tiler-1.6/" />
     		<item name="1.7" href="/image-tiler-1.7/" />
     		<item name="1.8" href="/image-tiler-1.8/" />
     		<item name="1.9" href="/image-tiler-1.9/" />
+    		<item name="1.10" href="/image-tiler-1.10/" />
+    		<item name="1.11" href="/image-tiler-1.11/" />
     	</item>
     	<item name="Maven Plugins" href="#">
 	    	<item name="Datamodel-Plugin" href="/datamodel-plugin/" />
