@@ -60,9 +60,10 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:http://server.mycore.de/svn/maven/org.mycore/trunk</connection>
-    <developerConnection>scm:svn:https://server.mycore.de/svn/maven/org.mycore/trunk</developerConnection>
-    <url>http://www.mycore.de/viewvc/viewvc.cgi/maven/org.mycore/</url>
+    <connection>scm:git:https://github.com/MyCoRe-Org/mycore-parent-pom.git</connection>
+    <developerConnection>scm:git:https://github.com/MyCoRe-Org/mycore-parent-pom.git</developerConnection>
+    <url>https://github.com/MyCoRe-Org/mycore-parent-pom/tree/master</url>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,6 +71,7 @@
     <mycore.build.directory>target</mycore.build.directory>
     <site.directory>latest</site.directory>
     <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
+    <java.target.version>1.8</java.target.version>
   </properties>
   <distributionManagement>
     <repository>
