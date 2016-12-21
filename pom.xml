@@ -501,6 +501,26 @@
       </build>
     </profile>
     <profile>
+      <id>git</id>
+      <activation>
+        <file>
+          <exists>${basedir}/.git/index</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-release-plugin</artifactId>
+            <configuration>
+              <autoVersionSubmodules>true</autoVersionSubmodules>
+              <pushChanges>false</pushChanges>
+              <tagNameFormat>v@{project.version}</tagNameFormat>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
       <id>codacy</id>
       <activation>
         <property>
