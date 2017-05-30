@@ -11,9 +11,10 @@
 	    		<item name="2016.06.0" href="/mycore-2016.06.0.x" />
     		</item>
     		<item name="Rolling Releases" href="#">
-	    		<item name="2016.12" href="/mycore-2016.12" />
+	    		<item name="2017.05" href="/mycore-2017.05" />
     		</item>
     		<item name="old releases" href="#">
+	    		<item name="2016.12" href="/mycore-2016.12" />
 	    		<item name="2016.02" href="/mycore-2016.02" />
 	    		<item name="2015.11" href="/mycore-2015.11" />
 	    		<item name="2015.07" href="/mycore-2015.07" />
