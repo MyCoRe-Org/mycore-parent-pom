@@ -1,41 +1,29 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.mycore</groupId>
   <artifactId>mycore-parent</artifactId>
-  <packaging>pom</packaging>
   <version>33-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <name>MyCoRe Parent POM</name>
   <description>The MyCoRe Parent POM holds mailing list, continous integration and plugin definitions used by all MyCoRe Maven projects.</description>
+  <url>http://www.mycore.org/generated</url>
+  <inceptionYear>2001</inceptionYear>
   <organization>
     <name>The MyCoRe Community</name>
     <url>http://www.mycore.org/</url>
   </organization>
-  <url>http://www.mycore.org/generated</url>
-  <prerequisites>
-    <maven>3.1.0</maven>
-  </prerequisites>
-  <ciManagement>
-    <system>jenkins</system>
-    <url>http://jenkins.mycore.de/</url>
-    <notifiers>
-      <notifier>
-        <type>mail</type>
-        <configuration>
-          <recipients>mycore-developer@lists.sourceforge.net</recipients>
-        </configuration>
-        <sendOnError>true</sendOnError>
-        <sendOnFailure>true</sendOnFailure>
-        <sendOnSuccess>true</sendOnSuccess>
-        <sendOnWarning>true</sendOnWarning>
-      </notifier>
-    </notifiers>
-  </ciManagement>
+  <licenses>
+    <license>
+      <name>GPL</name>
+      <url>http://www.gnu.org/licenses/gpl-2.0.txt</url>
+      <comments>v2 or higher</comments>
+    </license>
+  </licenses>
   <issueManagement>
     <system>JIRA</system>
     <url>https://mycore.atlassian.net/</url>
   </issueManagement>
-  <inceptionYear>2001</inceptionYear>
   <mailingLists>
     <mailingList>
       <name>mycore-developer</name>
@@ -52,70 +40,46 @@
       <archive>https://sourceforge.net/mailarchive/forum.php?forum_name=mycore-user</archive>
     </mailingList>
   </mailingLists>
-  <licenses>
-    <license>
-      <name>GPL</name>
-      <url>http://www.gnu.org/licenses/gpl-2.0.txt</url>
-      <comments>v2 or higher</comments>
-    </license>
-  </licenses>
   <scm>
     <connection>scm:git:https://github.com/MyCoRe-Org/mycore-parent-pom.git</connection>
     <developerConnection>scm:git:https://github.com/MyCoRe-Org/mycore-parent-pom.git</developerConnection>
     <url>https://github.com/MyCoRe-Org/mycore-parent-pom/tree/master</url>
     <tag>HEAD</tag>
   </scm>
+  <prerequisites>
+    <maven>3.1.0</maven>
+  </prerequisites>
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <mycore.build.directory>target</mycore.build.directory>
-    <site.directory>latest</site.directory>
-    <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
-    <node.version>v6.9.2</node.version>
-    <yarn.version>v0.18.1</yarn.version>
     <java.target.version>1.8</java.target.version>
+    <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
     <maven.compiler.target>${java.target.version}</maven.compiler.target>
+    <mycore.build.directory>target</mycore.build.directory>
+    <node.version>v6.9.2</node.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <site.directory>latest</site.directory>
+    <yarn.version>v0.18.1</yarn.version>
   </properties>
-  <distributionManagement>
-    <repository>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-releases</name>
-      <url>http://artifactory.mycore.de/libs-releases-local</url>
-    </repository>
-    <snapshotRepository>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-snapshots</name>
-      <url>http://artifactory.mycore.de/libs-snapshots-local</url>
-    </snapshotRepository>
-    <!-- mycore site -->
-    <site>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-sites</name>
-      <url>scp://server.mycore.de/mcr/mycore.de/generated/</url>
-    </site>
-  </distributionManagement>
   <build>
     <directory>${mycore.build.directory}</directory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-descriptor</id>
-            <goals>
-              <goal>attach-descriptor</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version><!--$NO-MVN-MAN-VER$ -->
-      </plugin>
-    </plugins>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jdeps-plugin</artifactId>
+          <version>3.1.0</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>jdkinternals</goal>
+                <!-- verify main classes -->
+                <goal>test-jdkinternals</goal>
+                <!-- verify test classes -->
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
           <groupId>org.bsc.maven</groupId>
           <artifactId>maven-processor-plugin</artifactId>
@@ -175,13 +139,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-toolchains-plugin</artifactId>
           <version>1.1</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>toolchain</goal>
-              </goals>
-            </execution>
-          </executions>
           <configuration>
             <toolchains>
               <jdk>
@@ -189,6 +146,13 @@
               </jdk>
             </toolchains>
           </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>toolchain</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
@@ -314,12 +278,8 @@
                 <pluginExecution>
                   <pluginExecutionFilter>
                     <groupId>org.mycore.plugins</groupId>
-                    <artifactId>
-                      datamodel-plugin
-                    </artifactId>
-                    <versionRange>
-                      [0.2-SNAPSHOT,)
-                    </versionRange>
+                    <artifactId>datamodel-plugin</artifactId>
+                    <versionRange>[0.2-SNAPSHOT,)</versionRange>
                     <goals>
                       <goal>schema</goal>
                       <goal>copy-editor</goal>
@@ -335,9 +295,7 @@
                 <pluginExecution>
                   <pluginExecutionFilter>
                     <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>
-                      xml-maven-plugin
-                    </artifactId>
+                    <artifactId>xml-maven-plugin</artifactId>
                     <versionRange>[1.0,)</versionRange>
                     <goals>
                       <goal>transform</goal>
@@ -368,9 +326,7 @@
                 <pluginExecution>
                   <pluginExecutionFilter>
                     <groupId>com.samaxes.maven</groupId>
-                    <artifactId>
-                      maven-minify-plugin
-                    </artifactId>
+                    <artifactId>maven-minify-plugin</artifactId>
                     <versionRange>[1.3.1,)</versionRange>
                     <goals>
                       <goal>minify</goal>
@@ -384,12 +340,8 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>
-                      org.apache.maven.plugins
-                    </groupId>
-                    <artifactId>
-                      maven-antrun-plugin
-                    </artifactId>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
                     <versionRange>[1.6,)</versionRange>
                     <goals>
                       <goal>run</goal>
@@ -404,16 +356,14 @@
                 <pluginExecution>
                   <pluginExecutionFilter>
                     <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>
-                      build-helper-maven-plugin
-                    </artifactId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
                     <versionRange>[1.5,)</versionRange>
                     <goals>
                       <goal>add-test-resource</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore></ignore>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -438,6 +388,24 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-descriptor</id>
+            <goals>
+              <goal>attach-descriptor</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.4</version>
+        <!--$NO-MVN-MAN-VER$ -->
+      </plugin>
+    </plugins>
   </build>
   <reporting>
     <plugins>
@@ -486,6 +454,97 @@
       </plugin>
     </plugins>
   </reporting>
+  <ciManagement>
+    <system>jenkins</system>
+    <url>http://jenkins.mycore.de/</url>
+    <notifiers>
+      <notifier>
+        <type>mail</type>
+        <sendOnError>true</sendOnError>
+        <sendOnFailure>true</sendOnFailure>
+        <sendOnSuccess>true</sendOnSuccess>
+        <sendOnWarning>true</sendOnWarning>
+        <configuration>
+          <recipients>mycore-developer@lists.sourceforge.net</recipients>
+        </configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>MyCoRe HQ</id>
+      <url>http://artifactory.mycore.de/mycore-releases</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>MyCoRe HQ Snapshots</id>
+      <url>http://artifactory.mycore.de/mycore-snapshots</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>MyCoRe HQ</id>
+      <url>http://artifactory.mycore.de/mycore-releases</url>
+    </pluginRepository>
+    <pluginRepository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>MyCoRe HQ Snapshots</id>
+      <url>http://artifactory.mycore.de/mycore-snapshots</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <distributionManagement>
+    <repository>
+      <id>MyCoRe HQ</id>
+      <name>MyCoRe HQ-releases</name>
+      <url>http://artifactory.mycore.de/libs-releases-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>MyCoRe HQ</id>
+      <name>MyCoRe HQ-snapshots</name>
+      <url>http://artifactory.mycore.de/libs-snapshots-local</url>
+    </snapshotRepository>
+    <!-- mycore site -->
+    <site>
+      <id>MyCoRe HQ</id>
+      <name>MyCoRe HQ-sites</name>
+      <url>scp://server.mycore.de/mcr/mycore.de/generated/</url>
+    </site>
+  </distributionManagement>
   <profiles>
     <profile>
       <id>toolchains-support</id>
@@ -576,10 +635,10 @@
               </execution>
               <execution>
                 <id>report</id>
-                <phase>test</phase>
                 <goals>
                   <goal>report</goal>
                 </goals>
+                <phase>test</phase>
               </execution>
             </executions>
           </plugin>
@@ -607,17 +666,17 @@
             <executions>
               <execution>
                 <id>install-node-and-yarn</id>
-                <phase>generate-resources</phase>
                 <goals>
                   <goal>install-node-and-yarn</goal>
                 </goals>
+                <phase>generate-resources</phase>
               </execution>
               <execution>
                 <id>yarn-install</id>
-                <phase>generate-resources</phase>
                 <goals>
                   <goal>yarn</goal>
                 </goals>
+                <phase>generate-resources</phase>
                 <configuration>
                   <arguments>install</arguments>
                 </configuration>
@@ -635,61 +694,4 @@
       </build>
     </profile>
   </profiles>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>MyCoRe HQ</id>
-      <url>http://artifactory.mycore.de/mycore-releases</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>MyCoRe HQ Snapshots</id>
-      <url>http://artifactory.mycore.de/mycore-snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
-  <repositories>
-    <repository>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>MyCoRe HQ</id>
-      <url>http://artifactory.mycore.de/mycore-releases</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>MyCoRe HQ Snapshots</id>
-      <url>http://artifactory.mycore.de/mycore-snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 </project>
