@@ -55,11 +55,11 @@
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
     <maven.compiler.target>${java.target.version}</maven.compiler.target>
     <mycore.build.directory>target</mycore.build.directory>
-    <node.version>v6.9.2</node.version>
+    <node.version>v8.9.1</node.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <site.directory>latest</site.directory>
-    <yarn.version>v0.18.1</yarn.version>
+    <yarn.version>v1.3.2</yarn.version>
   </properties>
   <build>
     <directory>${mycore.build.directory}</directory>
@@ -83,7 +83,7 @@
         <plugin>
           <groupId>org.bsc.maven</groupId>
           <artifactId>maven-processor-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>3.3.2</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -156,7 +156,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
@@ -265,7 +265,7 @@
         <plugin>
           <groupId>com.github.eirslett</groupId>
           <artifactId>frontend-maven-plugin</artifactId>
-          <version>1.4</version>
+          <version>1.6</version>
         </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
         <plugin>
