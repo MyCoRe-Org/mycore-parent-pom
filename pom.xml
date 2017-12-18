@@ -69,6 +69,11 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>de.thetaphi</groupId>
+          <artifactId>forbiddenapis</artifactId>
+          <version>1.7</version>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jdeps-plugin</artifactId>
           <version>3.1.0</version>
@@ -250,6 +255,11 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>buildnumber-maven-plugin</artifactId>
           <version>1.4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>1.9</version>
         </plugin>
         <plugin>
           <groupId>com.github.ekryd.sortpom</groupId>
@@ -611,7 +621,6 @@
           <plugin>
             <groupId>com.github.ekryd.sortpom</groupId>
             <artifactId>sortpom-maven-plugin</artifactId>
-            <version>2.4.0</version>
             <executions>
               <execution>
                 <id>verify-sort-pom</id>
@@ -656,7 +665,6 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>license-maven-plugin</artifactId>
-            <version>1.9</version>
             <configuration>
               <verbose>false</verbose>
               <addSvnKeyWords>true</addSvnKeyWords>
@@ -750,6 +758,11 @@
                         <include>org.slf4j:jcl-over-slf4j</include>
                       </includes>
                     </bannedDependencies>
+                    <requireFilesExist>
+                      <files>
+                        <file>${project.basedir}/LICENSE.txt</file>
+                      </files>
+                    </requireFilesExist>
                   </rules>
                   <fail>true</fail>
                 </configuration>
@@ -794,7 +807,6 @@
           <plugin>
             <groupId>de.thetaphi</groupId>
             <artifactId>forbiddenapis</artifactId>
-            <version>1.7</version>
             <configuration>
               <failOnUnsupportedJava>false</failOnUnsupportedJava>
               <!-- compile would fail anyway and this is required for MCR-873 -->
@@ -1001,7 +1013,6 @@
           <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.7.9</version>
             <executions>
               <execution>
                 <id>prepare</id>
