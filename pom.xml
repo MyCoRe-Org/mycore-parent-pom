@@ -59,6 +59,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <site.directory>latest</site.directory>
+    <sortpom.sortDeps>scope,groupId,artifactId</sortpom.sortDeps>
+    <sortpom.sortFile>https://gist.githubusercontent.com/yagee-de/dfd3698c1b49173dbf251f74eb6a9297/raw/406460c088ff3cb6354e4ae6b40535e6f841607d/mycore_sort.xml</sortpom.sortFile>
+    <sortpom.sortProps>true</sortpom.sortProps>
     <yarn.version>v1.3.2</yarn.version>
   </properties>
   <build>
@@ -84,11 +87,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.6</version>
-        </plugin>
-        <plugin>
-          <groupId>org.bsc.maven</groupId>
-          <artifactId>maven-processor-plugin</artifactId>
-          <version>3.3.2</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -239,8 +237,9 @@
           <version>2.20</version>
         </plugin>
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.2</version>
+          <version>2.5</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -251,6 +250,11 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>buildnumber-maven-plugin</artifactId>
           <version>1.4</version>
+        </plugin>
+        <plugin>
+          <groupId>com.github.ekryd.sortpom</groupId>
+          <artifactId>sortpom-maven-plugin</artifactId>
+          <version>2.4.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -368,7 +372,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <ignore />
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -552,6 +556,348 @@
   </distributionManagement>
   <profiles>
     <profile>
+      <id>ci</id>
+      <!-- Used by continuous integration like travis and bamboo -->
+      <activation>
+        <property>
+          <name>env.CI</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                  <goal>test-jar-no-fork</goal>
+                </goals>
+                <phase>verify</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>report</id>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.github.ekryd.sortpom</groupId>
+            <artifactId>sortpom-maven-plugin</artifactId>
+            <version>2.4.0</version>
+            <executions>
+              <execution>
+                <id>verify-sort-pom</id>
+                <goals>
+                  <goal>verify</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <expandEmptyElements>false</expandEmptyElements>
+                  <keepBlankLines>true</keepBlankLines>
+                  <sortDependencies>${sortpom.sortDeps}</sortDependencies>
+                  <sortOrderFile>${sortpom.sortFile}</sortOrderFile>
+                  <sortProperties>${sortpom.sortProps}</sortProperties>
+                  <verifyFail>stop</verifyFail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>pmd</goal>
+                  <goal>cpd</goal>
+                </goals>
+                <phase>verify</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>auto-update</id>
+      <!-- Used to update license and pom sorting -->
+      <properties>
+        <license.name>gpl_v3</license.name>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <version>1.9</version>
+            <configuration>
+              <verbose>false</verbose>
+              <addSvnKeyWords>true</addSvnKeyWords>
+              <licenseName>${license.name}</licenseName>
+            </configuration>
+            <executions>
+              <execution>
+                <id>download-licenses</id>
+                <goals>
+                  <goal>update-project-license</goal>
+                </goals>
+                <phase>process-sources</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.github.ekryd.sortpom</groupId>
+            <artifactId>sortpom-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>verify-sort-pom</id>
+                <phase>none</phase>
+              </execution>
+              <execution>
+                <id>sort-pom</id>
+                <goals>
+                  <goal>sort</goal>
+                </goals>
+                <phase>verify</phase>
+                <configuration>
+                  <expandEmptyElements>false</expandEmptyElements>
+                  <keepBlankLines>true</keepBlankLines>
+                  <sortDependencies>${sortpom.sortDeps}</sortDependencies>
+                  <sortOrderFile>${sortpom.sortFile}</sortOrderFile>
+                  <sortProperties>${sortpom.sortProps}</sortProperties>
+                  <verifyFail>warn</verifyFail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>checks</id>
+      <!-- Used by continuous integration like travis and bamboo and
+       for advanced checks that use build time -->
+      <activation>
+        <property>
+          <name>env.CI</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <properties />
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <dependencies>
+              <dependency>
+                <groupId>org.commonjava.maven.enforcer</groupId>
+                <artifactId>enforce-managed-deps-rule</artifactId>
+                <version>1.0</version>
+              </dependency>
+            </dependencies>
+            <executions>
+              <execution>
+                <id>enforce</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireManagedDeps implementation="org.commonjava.maven.enforcer.rule.EnforceManagedDepsRule">
+                      <checkProfiles>true</checkProfiles>
+                      <failOnViolation>true</failOnViolation>
+                    </requireManagedDeps>
+                    <!-- Disabled, https://issues.apache.org/jira/browse/MENFORCER-189 -->
+                    <!--
+                    <reactorModuleConvergence />
+                    -->
+                    <bannedDependencies>
+                      <excludes>
+                        <exclude>log4j</exclude>
+                        <exclude>org.slf4j</exclude>
+                        <exclude>javax.servlet:servlet-api</exclude>
+                      </excludes>
+                      <includes>
+                        <include>org.slf4j:slf4j-api</include>
+                        <include>org.slf4j:slf4j-ext</include>
+                        <include>org.slf4j:jcl-over-slf4j</include>
+                      </includes>
+                    </bannedDependencies>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+              <execution>
+                <id>enforce LOG4J-2.x API</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <bannedDependencies>
+                      <searchTransitive>false</searchTransitive>
+                      <excludes>
+                        <exclude>org.apache.logging.log4j:log4j-1.2-api</exclude>
+                      </excludes>
+                      <message>MCR-1509: Do not use LOG4J 1.2 API anymore</message>
+                    </bannedDependencies>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>analyze</id>
+                <goals>
+                  <goal>analyze-only</goal>
+                </goals>
+                <inherited>true</inherited>
+                <configuration>
+                  <failOnWarning>true</failOnWarning>
+                  <ignoreNonCompile>true</ignoreNonCompile>
+                  <outputXML>true</outputXML>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>de.thetaphi</groupId>
+            <artifactId>forbiddenapis</artifactId>
+            <version>1.7</version>
+            <configuration>
+              <failOnUnsupportedJava>false</failOnUnsupportedJava>
+              <!-- compile would fail anyway and this is required for MCR-873 -->
+              <failOnMissingClasses>false</failOnMissingClasses>
+              <failOnUnresolvableSignatures>false</failOnUnresolvableSignatures>
+              <bundledSignatures>
+                <bundledSignature>jdk-unsafe</bundledSignature>
+                <bundledSignature>jdk-deprecated</bundledSignature>
+                <bundledSignature>commons-io-unsafe-2.4</bundledSignature>
+              </bundledSignatures>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>checksstyle</id>
+      <activation>
+        <file>
+          <exists>${user.dir}/checkstyle.xml</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <configuration>
+              <configLocation>${user.dir}/checkstyle.xml</configLocation>
+            </configuration>
+            <executions>
+              <execution>
+                <id>validate</id>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>pmd</id>
+      <activation>
+        <file>
+          <exists>${user.dir}/ruleset.xml</exists>
+        </file>
+      </activation>
+      <properties>
+        <pmd.version>5.7.0</pmd.version>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <configuration>
+              <targetJdk>${java.target.version}</targetJdk>
+              <rulesets>
+                <ruleset>${user.dir}/ruleset.xml</ruleset>
+              </rulesets>
+            </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-core</artifactId>
+                <version>${pmd.version}</version>
+              </dependency>
+              <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-java</artifactId>
+                <version>${pmd.version}</version>
+              </dependency>
+              <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-javascript</artifactId>
+                <version>${pmd.version}</version>
+              </dependency>
+              <dependency>
+                <groupId>net.sourceforge.pmd</groupId>
+                <artifactId>pmd-xml</artifactId>
+                <version>${pmd.version}</version>
+              </dependency>
+            </dependencies>
+            <executions>
+              <execution>
+                <id>validate</id>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
       <id>ossrh</id>
       <activation>
         <property>
@@ -603,7 +949,7 @@
               <execution>
                 <id>attach-sources</id>
                 <goals>
-                  <goal>jar</goal>
+                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
