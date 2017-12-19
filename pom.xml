@@ -46,9 +46,6 @@
     <url>https://github.com/MyCoRe-Org/mycore-parent-pom/tree/master</url>
     <tag>HEAD</tag>
   </scm>
-  <prerequisites>
-    <maven>3.1.0</maven>
-  </prerequisites>
   <properties>
     <java.target.version>1.8</java.target.version>
     <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
@@ -296,6 +293,19 @@
           <artifactId>frontend-maven-plugin</artifactId>
           <version>1.6</version>
         </plugin>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.8</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>ossrh</serverId>
+            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+            <!-- You have to run mvn nexus-staging:release or mvn nexus-staging:drop after deploying a release if
+            set to false-->
+            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
@@ -526,47 +536,7 @@
       <url>http://artifactory.mycore.de/mycore-snapshots</url>
     </repository>
   </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </pluginRepository>
-    <pluginRepository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>MyCoRe HQ</id>
-      <url>http://artifactory.mycore.de/mycore-releases</url>
-    </pluginRepository>
-    <pluginRepository>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>MyCoRe HQ Snapshots</id>
-      <url>http://artifactory.mycore.de/mycore-snapshots</url>
-    </pluginRepository>
-  </pluginRepositories>
   <distributionManagement>
-    <repository>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-releases</name>
-      <url>http://artifactory.mycore.de/libs-releases-local</url>
-    </repository>
-    <snapshotRepository>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-snapshots</name>
-      <url>http://artifactory.mycore.de/libs-snapshots-local</url>
-    </snapshotRepository>
     <!-- mycore site -->
     <site>
       <id>MyCoRe HQ</id>
@@ -575,6 +545,78 @@
     </site>
   </distributionManagement>
   <profiles>
+    <profile>
+      <id>deploy-to-mycore-hq</id>
+      <activation>
+        <property>
+          <name>!deploy-to-central</name>
+        </property>
+      </activation>
+      <pluginRepositories>
+        <pluginRepository>
+          <releases>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>MyCoRe HQ</id>
+          <url>http://artifactory.mycore.de/mycore-releases</url>
+        </pluginRepository>
+        <pluginRepository>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+          <id>MyCoRe HQ Snapshots</id>
+          <url>http://artifactory.mycore.de/mycore-snapshots</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <distributionManagement>
+        <repository>
+          <id>MyCoRe HQ</id>
+          <name>MyCoRe HQ-releases</name>
+          <url>http://artifactory.mycore.de/libs-releases-local</url>
+        </repository>
+        <snapshotRepository>
+          <id>MyCoRe HQ</id>
+          <name>MyCoRe HQ-snapshots</name>
+          <url>http://artifactory.mycore.de/libs-snapshots-local</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+    <profile>
+      <id>deploy-to-central</id>
+      <activation>
+        <property>
+          <name>deploy-to-central</name>
+        </property>
+      </activation>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+      </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>ci</id>
       <!-- Used by continuous integration like travis and bamboo -->
@@ -768,6 +810,9 @@
                         <include>org.slf4j:jcl-over-slf4j</include>
                       </includes>
                     </bannedDependencies>
+                    <requireMavenVersion>
+                      <version>3.1.0</version>
+                    </requireMavenVersion>
                     <requireFilesExist>
                       <files>
                         <file>${project.basedir}/LICENSE.txt</file>
@@ -902,7 +947,7 @@
       </build>
     </profile>
     <profile>
-      <id>ossrh</id>
+      <id>sign-artifacts</id>
       <activation>
         <property>
           <name>gpg.keyname</name>
