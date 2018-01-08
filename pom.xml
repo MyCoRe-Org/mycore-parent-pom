@@ -815,13 +815,6 @@
         <plugins>
           <plugin>
             <artifactId>maven-enforcer-plugin</artifactId>
-            <dependencies>
-              <dependency>
-                <groupId>org.commonjava.maven.enforcer</groupId>
-                <artifactId>enforce-managed-deps-rule</artifactId>
-                <version>1.0</version>
-              </dependency>
-            </dependencies>
             <executions>
               <execution>
                 <id>enforce</id>
@@ -830,10 +823,6 @@
                 </goals>
                 <configuration>
                   <rules>
-                    <requireManagedDeps implementation="org.commonjava.maven.enforcer.rule.EnforceManagedDepsRule">
-                      <checkProfiles>true</checkProfiles>
-                      <failOnViolation>true</failOnViolation>
-                    </requireManagedDeps>
                     <!-- Disabled, https://issues.apache.org/jira/browse/MENFORCER-189 -->
                     <!--
                     <reactorModuleConvergence />
