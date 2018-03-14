@@ -48,6 +48,7 @@
   </scm>
   <properties>
     <artifactId>${project.artifactId}</artifactId>
+    <forbiddenapis.version>2.4.1</forbiddenapis.version>
     <java.target.version>1.8</java.target.version>
     <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
@@ -69,7 +70,7 @@
         <plugin>
           <groupId>de.thetaphi</groupId>
           <artifactId>forbiddenapis</artifactId>
-          <version>2.4.1</version>
+          <version>${forbiddenapis.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
