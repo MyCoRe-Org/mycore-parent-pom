@@ -522,7 +522,7 @@
       <id>deploy-to-mycore-hq</id>
       <activation>
         <property>
-          <name>!deploy-to-central</name>
+          <name>deploy-to-artifactory</name>
         </property>
       </activation>
       <distributionManagement>
@@ -542,7 +542,7 @@
       <id>deploy-to-central</id>
       <activation>
         <property>
-          <name>deploy-to-central</name>
+          <name>!deploy-to-artifactory</name>
         </property>
       </activation>
       <build>
