@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.mycore</groupId>
   <artifactId>mycore-parent</artifactId>
-  <version>36-SNAPSHOT</version>
+  <version>36</version>
   <packaging>pom</packaging>
   <name>MyCoRe Parent POM</name>
   <description>The MyCoRe Parent POM holds mailing list, continous integration and plugin definitions used by all MyCoRe Maven projects.</description>
@@ -44,7 +44,7 @@
     <connection>scm:git:https://github.com/MyCoRe-Org/mycore-parent-pom.git</connection>
     <developerConnection>scm:git:https://github.com/MyCoRe-Org/mycore-parent-pom.git</developerConnection>
     <url>https://github.com/MyCoRe-Org/mycore-parent-pom/tree/master</url>
-    <tag>HEAD</tag>
+    <tag>v36</tag>
   </scm>
   <properties>
     <artifactId>${project.artifactId}</artifactId>
@@ -517,32 +517,6 @@
       <url>scp://server.mycore.de/mcr/mycore.de/generated/</url>
     </site>
   </distributionManagement>
-  <developers>
-    <developer>
-      <id>mcrtchef</id>
-      <name>Thomas Scheffler</name>
-      <email>thomas.scheffler (at) uni-jena.de</email>
-      <organization>Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek</organization>
-      <organizationUrl>http://www.thulb.uni-jena.de/</organizationUrl>
-      <roles>
-        <role>architect</role>
-        <role>developer</role>
-      </roles>
-      <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>mcrkrebs</id>
-      <name>Kathleen Neumann</name>
-      <email>Kathleen.Neumann (at) gbv.de</email>
-      <organization>Verbundzentrale des GBV (VZG), Document Management System</organization>
-      <organizationUrl>http://www.gbv.de</organizationUrl>
-      <roles>
-        <role>coordination</role>
-        <role>developer</role>
-      </roles>
-      <timezone>+1</timezone>
-    </developer>
-  </developers>
   <profiles>
     <profile>
       <id>deploy-to-mycore-hq</id>
@@ -1098,4 +1072,30 @@
       </build>
     </profile>
   </profiles>
+  <developers>
+    <developer>
+      <id>mcrtchef</id>
+      <name>Thomas Scheffler</name>
+      <email>thomas.scheffler (at) uni-jena.de</email>
+      <organization>Friedrich-Schiller-Universität Jena, Thüringer Universitäts- und Landesbibliothek</organization>
+      <organizationUrl>http://www.thulb.uni-jena.de/</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>mcrkrebs</id>
+      <name>Kathleen Neumann</name>
+      <email>Kathleen.Neumann (at) gbv.de</email>
+      <organization>Verbundzentrale des GBV (VZG), Document Management System</organization>
+      <organizationUrl>http://www.gbv.de</organizationUrl>
+      <roles>
+        <role>coordination</role>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
 </project>
