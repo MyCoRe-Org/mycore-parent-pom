@@ -48,7 +48,7 @@
   </scm>
   <properties>
     <artifactId>${project.artifactId}</artifactId>
-    <forbiddenapis.version>2.5</forbiddenapis.version>
+    <forbiddenapis.version>2.6</forbiddenapis.version>
     <java.target.version>1.8</java.target.version>
     <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
@@ -63,6 +63,11 @@
     <sortpom.sortProps>true</sortpom.sortProps>
     <yarn.version>v1.3.2</yarn.version>
   </properties>
+  <!--
+  <prerequisites>
+    <maven>3.5.0</maven>
+  </prerequisites>
+  -->
   <build>
     <directory>${mycore.build.directory}</directory>
     <pluginManagement>
@@ -145,7 +150,7 @@
         <!-- Use Java ${java.target.version} everywhere -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.0</version>
           <configuration>
             <optimize>true</optimize>
             <showDeprecation>true</showDeprecation>
@@ -181,7 +186,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>1.4.1</version>
+          <version>3.0.0-M2</version>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -201,7 +206,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>2.5</version>
+          <version>3.0.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-pmd-plugin</artifactId>
@@ -209,7 +214,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.9</version>
+          <version>3.0.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
@@ -225,16 +230,16 @@
         </plugin>
         <plugin>
           <artifactId>maven-shade-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.7</version>
+          <version>3.7.1</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.wagon</groupId>
               <artifactId>wagon-ssh</artifactId>
-              <version>2.10</version>
+              <version>3.1.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -244,16 +249,16 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.21.0</version>
+          <version>2.22.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>2.21.0</version>
+          <version>2.22.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.5</version>
+          <version>2.7</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -273,12 +278,12 @@
         <plugin>
           <groupId>com.github.ekryd.sortpom</groupId>
           <artifactId>sortpom-maven-plugin</artifactId>
-          <version>2.8.0</version>
+          <version>2.9.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.4</version>
+          <version>3.0.5</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -288,7 +293,7 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.1</version>
+          <version>0.8.2</version>
         </plugin>
         <plugin>
           <groupId>com.github.eirslett</groupId>
@@ -441,7 +446,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
+        <version>3.0.1</version>
         <!--$NO-MVN-MAN-VER$ -->
       </plugin>
     </plugins>
@@ -465,12 +470,12 @@
       </plugin>
       <plugin>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.5</version>
+        <version>3.0.0</version>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
         <configuration>
           <xmlOutput>true</xmlOutput>
           <findbugsXmlOutput>true</findbugsXmlOutput>
@@ -478,11 +483,11 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
+        <version>3.0.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.20</version>
+        <version>2.22.0</version>
       </plugin>
       <plugin>
         <artifactId>maven-pmd-plugin</artifactId>
