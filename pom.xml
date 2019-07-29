@@ -216,7 +216,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.1.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-jxr-plugin</artifactId>
@@ -467,7 +467,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
         <!--$NO-MVN-MAN-VER$ -->
       </plugin>
     </plugins>
@@ -503,7 +503,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-surefire-report-plugin</artifactId>
@@ -961,6 +961,49 @@
                 </configuration>
               </execution>
             </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>javadoc-11-fix</id>
+      <!-- workaround for https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8208269 -->
+      <activation>
+        <jdk>[11,12)</jdk>
+        <file>
+          <exists>${basedir}/src/main/java/module-info.java</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforce-toolchains</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireFilesExist>
+                      <message>JavaDoc 11 does not work with Log4J2, please configure toolchains.xml and provide a JDK &gt; 11</message>
+                      <files>
+                        <file>${user.home}/.m2/toolchains.xml</file>
+                      </files>
+                    </requireFilesExist>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <jdkToolchain>
+                <version>(11,]</version>
+              </jdkToolchain>
+            </configuration>
           </plugin>
         </plugins>
       </build>
