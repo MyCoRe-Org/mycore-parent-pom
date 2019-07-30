@@ -967,25 +967,7 @@
       <build>
         <plugins>
           <plugin>
-            <artifactId>maven-enforcer-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>enforce-toolchains</id>
-                <goals>
-                  <goal>enforce</goal>
-                </goals>
-                <configuration>
-                  <rules>
-                    <requireFilesExist>
-                      <message>JavaDoc 11 does not work with Log4J2, please configure toolchains.xml and provide a JDK &gt; 11</message>
-                      <files>
-                        <file>${user.home}/.m2/toolchains.xml</file>
-                      </files>
-                    </requireFilesExist>
-                  </rules>
-                </configuration>
-              </execution>
-            </executions>
+            <artifactId>maven-toolchains-plugin</artifactId>
           </plugin>
           <plugin>
             <artifactId>maven-javadoc-plugin</artifactId>
