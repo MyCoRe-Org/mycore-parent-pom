@@ -956,31 +956,6 @@
       </build>
     </profile>
     <profile>
-      <id>javadoc-11-fix</id>
-      <!-- workaround for https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8208269 -->
-      <activation>
-        <jdk>[11,12)</jdk>
-        <file>
-          <exists>${basedir}/src/main/java/module-info.java</exists>
-        </file>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-toolchains-plugin</artifactId>
-          </plugin>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <jdkToolchain>
-                <version>(11,]</version>
-              </jdkToolchain>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
       <id>release-profile</id>
       <build>
         <directory>target</directory>
