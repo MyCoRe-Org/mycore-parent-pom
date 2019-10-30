@@ -869,6 +869,9 @@
               <rulesets>
                 <ruleset>${user.dir}/ruleset.xml</ruleset>
               </rulesets>
+              <excludeRoots>
+                <excludeRoot>target/generated-sources</excludeRoot>
+              </excludeRoots>
             </configuration>
             <dependencies>
               <dependency>
