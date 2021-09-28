@@ -301,8 +301,8 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <!-- 0.8.4 and 0.8.5 will fail mycore-pi tests with CI=true -->
-          <version>0.8.7</version>
+          <!-- 0.8.4 - 0.8.7 will fail mycore-pi tests with CI=true -->
+          <version>0.8.3</version>
         </plugin>
         <plugin>
           <groupId>com.github.eirslett</groupId>
