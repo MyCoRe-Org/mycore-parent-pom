@@ -48,7 +48,7 @@
   </scm>
   <properties>
     <artifactId>${project.artifactId}</artifactId>
-    <forbiddenapis.version>3.2.0</forbiddenapis.version>
+    <forbiddenapis.version>3.2</forbiddenapis.version>
     <java.target.version>11</java.target.version>
     <jaxws.plugin.version>2.3.1-b20150201.1248</jaxws.plugin.version>
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
