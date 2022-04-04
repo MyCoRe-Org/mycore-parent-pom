@@ -91,7 +91,7 @@
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
     <maven.compiler.target>${java.target.version}</maven.compiler.target>
     <mycore.build.directory>target</mycore.build.directory>
-    <nexus-staging-maven-plugin.version>1.6.11</nexus-staging-maven-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <node.version>v8.9.1</node.version>
     <pmd.version>6.44.0</pmd.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
