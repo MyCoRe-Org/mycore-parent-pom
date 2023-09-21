@@ -94,7 +94,7 @@
     <mycore.build.directory>target</mycore.build.directory>
     <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
     <node.version>v16.19.1</node.version>
-    <pmd.version>6.53.0</pmd.version>
+    <pmd.version>6.55.0</pmd.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <site.directory>latest</site.directory>
