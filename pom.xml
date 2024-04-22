@@ -108,6 +108,7 @@
     <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
     <wagon-ssh.version>3.5.2</wagon-ssh.version>
     <xml-maven-plugin.version>1.1.0</xml-maven-plugin.version>
+    <yarn.install.args />
     <yarn.version>v1.22.19</yarn.version>
   </properties>
   <!--
@@ -1024,7 +1025,7 @@
                 </goals>
                 <phase>generate-resources</phase>
                 <configuration>
-                  <arguments>install</arguments>
+                  <arguments>install ${yarn.install.args}</arguments>
                 </configuration>
               </execution>
               <execution>
