@@ -286,6 +286,9 @@
               <version>${pmd.version}</version>
             </dependency>
           </dependencies>
+          <configuration>
+            <printFailingErrors>true</printFailingErrors>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
