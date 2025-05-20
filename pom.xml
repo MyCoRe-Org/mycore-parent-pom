@@ -51,6 +51,7 @@
     <artifactId>${project.artifactId}</artifactId>
     <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
     <buildnumber-maven-plugin.version>3.2.1</buildnumber-maven-plugin.version>
+    <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
     <checkstyle.version>10.19.0</checkstyle.version>
     <duplicate-finder-maven-plugin.version>2.0.1</duplicate-finder-maven-plugin.version>
     <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
@@ -94,7 +95,6 @@
     <maven.compiler.source>${java.target.version}</maven.compiler.source>
     <maven.compiler.target>${java.target.version}</maven.compiler.target>
     <mycore.build.directory>target</mycore.build.directory>
-    <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
     <node.version>v20.14.0</node.version>
     <pmd.version>7.7.0</pmd.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -382,14 +382,15 @@
           <version>${frontend-maven-plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>${nexus-staging-maven-plugin.version}</version>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>${central-publishing-maven-plugin.version}</version>
           <extensions>true</extensions>
           <configuration>
-            <serverId>ossrh</serverId>
-            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+            <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots</centralSnapshotsUrl>
+            <publishingServerId>central</publishingServerId>
+            <autoPublish>true</autoPublish>
+            <waitUntil>validated</waitUntil>
           </configuration>
         </plugin>
       </plugins>
@@ -491,60 +492,22 @@
       </notifier>
     </notifiers>
   </ciManagement>
-  <distributionManagement>
-    <!-- mycore site -->
-    <site>
-      <id>MyCoRe HQ</id>
-      <name>MyCoRe HQ-sites</name>
-      <url>scp://server.mycore.de/mcr/mycore.de/generated/</url>
-    </site>
-  </distributionManagement>
   <profiles>
-    <profile>
-      <id>deploy-to-mycore-hq</id>
-      <activation>
-        <property>
-          <name>deploy-to-artifactory</name>
-        </property>
-      </activation>
-      <distributionManagement>
-        <repository>
-          <id>MyCoRe HQ</id>
-          <name>MyCoRe HQ-releases</name>
-          <url>http://artifactory.mycore.de/libs-releases-local</url>
-        </repository>
-        <snapshotRepository>
-          <id>MyCoRe HQ</id>
-          <name>MyCoRe HQ-snapshots</name>
-          <url>http://artifactory.mycore.de/libs-snapshots-local</url>
-        </snapshotRepository>
-      </distributionManagement>
-    </profile>
     <profile>
       <id>deploy-to-central</id>
       <activation>
         <property>
-          <name>!deploy-to-artifactory</name>
+          <name>!skipDeployToCentral</name>
         </property>
       </activation>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
           </plugin>
         </plugins>
       </build>
-      <distributionManagement>
-        <repository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-        <snapshotRepository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-      </distributionManagement>
     </profile>
     <profile>
       <id>ci</id>
