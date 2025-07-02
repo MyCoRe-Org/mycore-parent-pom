@@ -49,45 +49,45 @@
   <properties>
     <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
     <artifactId>${project.artifactId}</artifactId>
-    <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
+    <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
     <buildnumber-maven-plugin.version>3.2.1</buildnumber-maven-plugin.version>
-    <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+    <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
     <checkstyle.version>10.19.0</checkstyle.version>
     <duplicate-finder-maven-plugin.version>2.0.1</duplicate-finder-maven-plugin.version>
-    <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
-    <forbiddenapis.version>3.8</forbiddenapis.version>
+    <exec-maven-plugin.version>3.5.1</exec-maven-plugin.version>
+    <forbiddenapis.version>3.9</forbiddenapis.version>
     <frontend-maven-plugin.version>1.15.1</frontend-maven-plugin.version>
     <gpg.bestPractices>true</gpg.bestPractices>
-    <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
     <java.target.version>21</java.target.version>
     <jaxws-maven-plugin.version>2.3.1-b20150201.1248</jaxws-maven-plugin.version>
-    <license-maven-plugin.version>2.4.0</license-maven-plugin.version>
+    <license-maven-plugin.version>2.6.0</license-maven-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
     <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
     <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
     <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-    <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
-    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+    <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
-    <maven-deploy-plugin.version>3.1.3</maven-deploy-plugin.version>
-    <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
-    <maven-failsafe-plugin.version>3.5.1</maven-failsafe-plugin.version>
-    <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
-    <maven-install-plugin.version>3.1.3</maven-install-plugin.version>
+    <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+    <maven-enforcer-plugin.version>3.6.0</maven-enforcer-plugin.version>
+    <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
+    <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+    <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-    <maven-javadoc-plugin.version>3.10.1</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
     <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
     <maven-jxr-plugin.version>3.6.0</maven-jxr-plugin.version>
-    <maven-pmd-plugin.version>3.25.0</maven-pmd-plugin.version>
-    <maven-project-info-reports-plugin.version>3.8.0</maven-project-info-reports-plugin.version>
+    <maven-pmd-plugin.version>3.27.0</maven-pmd-plugin.version>
+    <maven-project-info-reports-plugin.version>3.9.0</maven-project-info-reports-plugin.version>
     <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
     <maven-required.version>3.6.3</maven-required.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
     <maven-site-plugin.version>4.0.0-M16</maven-site-plugin.version>
     <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>3.5.1</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>${maven-surefire-plugin.version}</maven-surefire-report-plugin.version>
     <maven-toolchains-plugin.version>3.2.0</maven-toolchains-plugin.version>
     <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
@@ -96,7 +96,7 @@
     <maven.compiler.target>${java.target.version}</maven.compiler.target>
     <mycore.build.directory>target</mycore.build.directory>
     <node.version>v20.14.0</node.version>
-    <pmd.version>7.7.0</pmd.version>
+    <pmd.version>7.15.0</pmd.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <site.directory>latest</site.directory>
@@ -105,9 +105,9 @@
     <sortpom.sortDeps>scope,groupId,artifactId</sortpom.sortDeps>
     <sortpom.sortFile>https://gist.githubusercontent.com/yagee-de/dfd3698c1b49173dbf251f74eb6a9297/raw/406460c088ff3cb6354e4ae6b40535e6f841607d/mycore_sort.xml</sortpom.sortFile>
     <sortpom.sortProps>true</sortpom.sortProps>
-    <spotbugs-maven-plugin.version>4.8.6.5</spotbugs-maven-plugin.version>
+    <spotbugs-maven-plugin.version>4.9.3.2</spotbugs-maven-plugin.version>
     <toolchain.jdk.version>[${java.target.version},)</toolchain.jdk.version>
-    <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
     <wagon-ssh.version>3.5.2</wagon-ssh.version>
     <xml-maven-plugin.version>1.1.0</xml-maven-plugin.version>
     <yarn.install.args />
